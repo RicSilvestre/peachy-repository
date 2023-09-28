@@ -2,14 +2,17 @@
   action="/cart/add"
   method="post"
   data-cart-submit
->
-  <variant-swatch>
+  class="h-full flex flex-col">
+  <a href="{{ product.url }}">
+  <img class="w-full" src="{{ product.featured_image | image_url: height: 350, width: 350 }}" alt="{{ product.title }}" />
+  <h4 class="text-center text-3xl font-adorn-condensed-sans my-5">{{ product.title }}</h4>
+  </a>
+  <variant-swatch class="flex flex-col grow justify-end">
+    
     {% if product.variants.size > 1 %}
-      <select name="id">
+      <select class="font-futura bg-transparent mb-6 bg-transparent border-b-bg_1 border-b text-lg pb-2" name="id">
         {% for variant in product.variants %}
-          <option
-            value="{{ variant.id }}"
-          >
+          <option data-price="{{ variant.price | money }}" class="text-lg bg-bg_2" value="{{ variant.id }}">
             {{ variant.title }}
           </option>
         {% endfor %}
@@ -18,10 +21,8 @@
       <input
         type="hidden"
         name="id"
-        value="{{ product.selected_or_first_available_variant.id }}"
-      >
+        value="{{ product.selected_or_first_available_variant.id }}">
     {% endif %}
-
-    <button type="submit">add to cart</button>
+    <button class="btn-atc" type="submit"><span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span> | add to cart</button>
   </variant-swatch>
 </form>

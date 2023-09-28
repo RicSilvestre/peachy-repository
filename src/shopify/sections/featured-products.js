@@ -13,19 +13,30 @@ const FeaturedProducts = {
 
   _init() {
     this.sliderWrapper = this.container.querySelector(".swiper");
-    if (!this.sliderWrapper) return;
-
-    this.slider = new Swiper(this.sliderWrapper, {
-      slidesPerView: 1,
-      autoplay: true,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      modules: [Autoplay, Pagination],
-    });
+    window.addEventListener('resize', () => {
+      if (!this.sliderWrapper) return;
+      if (window.innerWidth < 768) {
+        if (this.slider && !this.slider.destroyed) return
+        this.slider = new Swiper(this.sliderWrapper, {
+          slidesPerView: 1,
+          autoplay: false,
+          pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true,
+          },
+          modules: [Autoplay, Pagination],
+        });
+      } else {
+        if (this.slider?.destroyed) return;
+        this.slider?.destroy();
+      }
+    })
+    window.dispatchEvent(new Event('resize'));
   },
 };
 
 export default FeaturedProducts;
+
+// Initial check on page load
+

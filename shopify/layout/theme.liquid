@@ -65,6 +65,14 @@
         CartJS.init({{ cart | json }});
       });
     </script>
+    <style>
+      body {
+        background-image: url("{{ 'bg.png' | asset_url }}");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
 
   <body class="overflow-x-hidden">

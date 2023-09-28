@@ -1,4 +1,4 @@
 [environments.dev]
-store = ""
+store = "dev-tests-ricardo"
 path = "."
 theme-editor-sync = true

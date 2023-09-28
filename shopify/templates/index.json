@@ -8,6 +8,14 @@
     "1d2f5b0d-e932-4cac-9a2d-4c348a75e38e": {
       "type": "featured-products",
       "settings": {
+        "title": "OUR BEST SELLERS",
+        "products": [
+          "black-leather-bag",
+          "blue-silk-tuxedo",
+          "chequered-red-shirt",
+          "classic-leather-jacket",
+          "dark-denim-top"
+        ]
       }
     }
   },

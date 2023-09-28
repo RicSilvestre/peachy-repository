@@ -1,5 +1,8 @@
 @import "tailwindcss/base";
 @layer base {
+  :root {
+    --swiper-pagination-color: #FFD11F;
+  }
 }
 
 @import "tailwindcss/components";
@@ -7,6 +10,7 @@
   @import "@/css/snippets/site-logo.scss";
   @import "@/css/sections/header.scss";
   @import "@/css/sections/featured-products.scss";
+  @import "@/css/snippets/product-grid-item.scss";
 }
 
 @import "tailwindcss/utilities";

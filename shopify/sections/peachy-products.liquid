@@ -1,0 +1,26 @@
+<div data-section-type="peachy-products" data-section-id="{{ section.id }}">
+  {% for product in section.settings.products %}
+    <div class="container">
+      {% render "product-grid-item", product: product %}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Peachy Products",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "product_list",
+        "id": "products",
+        "label": "Selected products"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Peachy Products"
+      }
+    ]
+  }
+{% endschema %}

@@ -5,7 +5,12 @@ class VariantSwatch extends HTMLElement {
   }
 
   _init() {
-    // ...
+    this.selector = this.querySelector("select");
+    if (this.selector) {
+      this.selector.addEventListener("change", e => {
+        this.querySelector(".current-price").innerText = e.target.selectedOptions[0].dataset.price;
+      })
+    }
   }
 }
 
