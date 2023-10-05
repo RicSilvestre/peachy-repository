@@ -17,8 +17,11 @@ module.exports = {
       gridTemplateColumns: {
         "peachy-section": "repeat(auto-fit, minmax(280px, 1fr))",
       },
-      backgroundImage: {
-        "sky": "url('/assets/bg.png')",
+      maxWidth: {
+        "8xl": "1360px",
+      },
+      screens: {
+        "desktop": "1440px",
       }
     },
     colors: {

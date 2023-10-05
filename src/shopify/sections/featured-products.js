@@ -13,7 +13,7 @@ const FeaturedProducts = {
 
   _init() {
     this.sliderWrapper = this.container.querySelector(".swiper");
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       if (!this.sliderWrapper) return;
       if (window.innerWidth < 768) {
         if (this.slider && !this.slider.destroyed) return
@@ -32,7 +32,7 @@ const FeaturedProducts = {
         this.slider?.destroy();
       }
     })
-    window.dispatchEvent(new Event('resize'));
+    window.dispatchEvent(new Event("resize"));
   },
 };
 
